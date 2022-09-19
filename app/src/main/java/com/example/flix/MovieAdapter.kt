@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.Placeholder
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import java.net.ConnectException
@@ -36,7 +37,10 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
 
-            Glide.with(context).load(movie.posterImageUrl).into(ivPoster)
+            Glide.with(context).load(movie.posterImageUrl).centerCrop().placeholder(R
+                .drawable
+                    .poster_placeholder).into(ivPoster)
+
         }
     }
 }
