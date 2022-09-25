@@ -15,6 +15,6 @@
     <color name="secondaryLightColor">#666ad1</color>
     <color name="secondaryDarkColor">#001970</color>
     <color name="primaryTextColor">#000000</color>
-    <color name="secondaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#333333</color>
 
 </resources>
