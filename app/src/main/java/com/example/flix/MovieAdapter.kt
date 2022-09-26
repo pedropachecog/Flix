@@ -1,5 +1,6 @@
 package com.example.flix
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,6 +9,9 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -72,8 +76,21 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             // 2. Open an intent to show its details
 
             val intent = Intent(context, DetailActivity::class.java)
+
+
+
+
+            // on below line we are creating a variable
+            // for activity options compact and setting
+            // transition for our activity.
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                context as Activity, ivPoster, ViewCompat.getTransitionName(ivPoster)!!
+            )
+
+
             intent.putExtra(MOVIE_EXTRA, movie)
-            context.startActivity(intent)
+
+            context.startActivity(intent,options.toBundle())
 
         }
     }

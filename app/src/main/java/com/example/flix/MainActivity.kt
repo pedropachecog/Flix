@@ -2,6 +2,8 @@ package com.example.flix
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Explode
+import android.transition.Fade
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +31,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val explode = Explode()
+
+        window.enterTransition = explode
+
+        window.exitTransition = explode
+
         rvMovies = findViewById(R.id.rvMovies)
 
         val movieAdapter = MovieAdapter(this, movies)

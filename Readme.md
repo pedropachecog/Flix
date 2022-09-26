@@ -3,6 +3,36 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ---
 
+## Flix Part 2
+
+### User Stories
+
+#### REQUIRED (10pts)
+
+- [X] (8pts) Expose details of movie (ratings using RatingBar, popularity, and synopsis) in a separate activity.
+- [X] (2pts) Allow video posts to be played in full-screen using the YouTubePlayerView.
+
+#### BONUS
+
+- [X] Implement a shared element transition when user clicks into the details of a movie (1 point).
+- [X] Add a rounded corners for the images using the Glide transformations. (1 point)
+
+#### OTHER FEATURES
+
+- Custom launcher icon
+
+### App Walkthough GIF
+
+<img src="2flixdemopp" width=250><br>
+
+
+## Open-source libraries used
+- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
+- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
+
+
+---
+
 ## Flix Part 1
 
 ### User Stories

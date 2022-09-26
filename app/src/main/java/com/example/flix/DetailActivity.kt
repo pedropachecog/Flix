@@ -2,6 +2,8 @@ package com.example.flix
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Explode
+import android.transition.Fade
 import android.util.Log
 import android.widget.RatingBar
 import android.widget.TextView
@@ -30,6 +32,11 @@ class DetailActivity : YouTubeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        val explode = Explode()
+
+        window.enterTransition = explode
+        window.exitTransition = explode
 
         tvTitle = findViewById(R.id.tvTitle)
         tvOverview = findViewById(R.id.tvOverview)
