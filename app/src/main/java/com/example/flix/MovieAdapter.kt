@@ -8,11 +8,11 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.Placeholder
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import java.net.ConnectException
+import com.bumptech.glide.request.RequestOptions
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
 private const val TAG = "MovieAdapter"
@@ -47,9 +47,19 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
 
-            Glide.with(context).load(movie.posterImageUrl).centerCrop().placeholder(R
+            val radius = 30 // corner radius, higher value = more rounded
+            val margin = 10 // crop margin, set to 0 for corners with no crop
+
+
+            Glide.with(context)
+                .load(movie.posterImageUrl)
+                .centerCrop()
+                .apply(RequestOptions.bitmapTransform(RoundedCornersTransformation(radius, margin,
+                    RoundedCornersTransformation.CornerType.ALL)))
+                .placeholder(R
                 .drawable
-                    .poster_placeholder).into(ivPoster)
+                    .poster_placeholder)
+                .into(ivPoster)
 
         }
 
