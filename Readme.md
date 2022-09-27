@@ -20,6 +20,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 #### OTHER FEATURES
 
 - Custom launcher icon
+- Added rating and release date both in main and detail activities
 
 ### App Walkthough GIF
 

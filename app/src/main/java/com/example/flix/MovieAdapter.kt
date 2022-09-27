@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+import java.text.SimpleDateFormat
 
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
@@ -42,6 +43,9 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         private val ivPoster = itemView.findViewById<ImageView>(R.id.ivPoster)
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvOverview = itemView.findViewById<TextView>(R.id.tvOverview)
+        private val tvPremiereDate = itemView.findViewById<TextView>(R.id.tvPremiereDate)
+
+
 
         init {
             itemView.setOnClickListener(this)
@@ -50,6 +54,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         fun bind(movie: Movie) {
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
+            tvPremiereDate.text = "Release date: " + movie.release_date
 
             val radius = 30 // corner radius, higher value = more rounded
             val margin = 10 // crop margin, set to 0 for corners with no crop

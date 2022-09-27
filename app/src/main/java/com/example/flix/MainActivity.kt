@@ -11,6 +11,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 import org.json.JSONException
+import java.text.SimpleDateFormat
 
 private const val TAG = "MainActivity"
 private const val NOW_PLAYING_URL =
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val movieAdapter = MovieAdapter(this, movies)
         rvMovies.adapter = movieAdapter
         rvMovies.layoutManager = LinearLayoutManager(this)
+
 
 
 

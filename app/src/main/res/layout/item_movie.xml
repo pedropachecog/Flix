@@ -26,18 +26,46 @@
         android:text="Fall"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+    <RatingBar
+        android:id="@+id/rbVoteAverage"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@id/ivPoster"
+        android:layout_below="@id/tvTitle"
+        android:isIndicator="true"
+        android:rating="4.5"
+        android:numStars="10"
+        android:stepSize="0.5"/>
+
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvTitle"
+        android:layout_below="@id/tvPremiereDate"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_toRightOf="@id/ivPoster"
         android:ellipsize="end"
-        android:maxLines="5"
+        android:maxLines="3"
         android:text="For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights"
+        />
+
+    <TextView
+        android:id="@+id/tvPremiereDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rbVoteAverage"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/ivPoster"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Release date: 2022-09-12"
         />
 </RelativeLayout>

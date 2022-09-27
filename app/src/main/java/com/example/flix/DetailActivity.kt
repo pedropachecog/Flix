@@ -28,6 +28,7 @@ class DetailActivity : YouTubeBaseActivity() {
     private lateinit var tvOverview: TextView
     private lateinit var ratingBar: RatingBar
     private lateinit var ytPlayerView: YouTubePlayerView
+    private lateinit var tvReleaseDate: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,7 @@ class DetailActivity : YouTubeBaseActivity() {
         tvTitle = findViewById(R.id.tvTitle)
         tvOverview = findViewById(R.id.tvOverview)
         ratingBar = findViewById(R.id.rbVoteAverage)
+        tvReleaseDate = findViewById(R.id.tvPremiereDate)
 
         ytPlayerView= findViewById(R.id.player)
 
@@ -49,6 +51,7 @@ class DetailActivity : YouTubeBaseActivity() {
 
         tvTitle.text = movie.title
         tvOverview.text = movie.overview
+        tvReleaseDate.text = "Release date: " + movie.release_date
 
         //TODO: get rating of the movie
         ratingBar.rating = movie.voteAverage.toFloat()

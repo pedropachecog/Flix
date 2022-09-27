@@ -11,7 +11,8 @@ data class Movie(
     val voteAverage: Double,
     private val posterPath: String,
     val title: String,
-    val overview: String
+    val overview: String,
+    val release_date: String
 ) : Parcelable {
     @IgnoredOnParcel
     val posterImageUrl = "https://image.tmdb.org/t/p/w342/$posterPath"
@@ -27,7 +28,8 @@ data class Movie(
                         movieJson.getDouble("vote_average"),
                         movieJson.getString("poster_path"),
                         movieJson.getString("title"),
-                        movieJson.getString("overview")
+                        movieJson.getString("overview"),
+                        movieJson.getString("release_date")
                     )
                 )
             }
